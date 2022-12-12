@@ -1,0 +1,37 @@
+<section class="grid-item-main bg-secondary bg-gradient px-3 py-3">
+    <div class="mx-2 my-2 row">
+        <img class="col-12 col-sm-5 col-md-2 img-thumbnail" src="<%= song[0]["picture"] %>" alt="<%= song[0]["name"] %> Picture" />
+        <div class="col-12 col-sm-7 col-md-10 pl-2 mt-3 d-flex flex-column justify-content-end">
+            <h6 class="text-white mb-2">SONG</h6>
+            <h3 class="text-white mb-0"><%= song[0]["name"] %></h3>
+            <p class="text-white mt-1 font-small bold"><%= song[0]["artists"][0]["name"] %> - <%= song[0]["year"] %> - <%= song[0]["genre"] %></p>
+        </div>
+    </div>
+    <% const userId = user.length === 0 ? "" : user[0]["_id"] %>
+    <% const songId = song[0]["_id"] %>
+    <% const artistId = song[0]["artists"][0]["_id"] %>
+    <% const likeASong_args = [userId, songId]; %>
+    <% const followAnArtist_args = [userId, artistId] %>
+    <div class="px-5 py-5 d-flex flex-column flex-sm-row justify-content-between justify-content-lg-start">
+        <button class="button-hidden mx-lg-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+            </svg>
+            <p class="pt-2 bold">Play Song</p>
+        </button>
+        <button class="button-hidden mx-lg-5" onclick="likeASong('<%= likeASong_args %>')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+            </svg>
+            <p class="pt-2 bold">Like Song</p>
+        </button>
+        <button class="button-hidden mx-lg-5" onclick="followAnArtist('<%= followAnArtist_args %>')" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+            </svg>
+            <p class="pt-2 bold">Follow Artist</p>
+        </button>
+    </div>
+
+    <%- include("company.ejs") %>
+</section>

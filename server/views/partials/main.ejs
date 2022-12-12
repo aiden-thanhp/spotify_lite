@@ -1,0 +1,11 @@
+<section class="grid-item-main bg-secondary bg-gradient px-3 py-3">
+    <h3 class="text-white mb-3">All Songs</h3>
+
+    <div class="grid card-template mb-5">
+        <% allSongs.forEach(({ _id, artists, name, picture }) => { %>
+        <%- include("card.ejs", { id:_id, picture:picture, name:name, artists:artists}) %>
+        <% }) %>
+    </div>
+
+    <%- include("company.ejs") %>
+</section>

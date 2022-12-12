@@ -1,0 +1,129 @@
+body {
+    overscroll-behavior-y: none;
+}
+
+.grid {
+    display: grid
+}
+
+.grid-template {
+    grid-template-areas:
+        "sidebar nav nav nav"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main";
+}
+
+.grid-item-sidebar {
+    grid-area: sidebar
+}
+
+.grid-item-nav {
+    grid-area: nav
+}
+
+.grid-item-main {
+    grid-area: main
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+.card-template {
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.radius {
+    border-radius: 5%
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.horizontal-line {
+    width: 100vw;
+    border-bottom: solid 1px lightgray
+}
+
+.font-small {
+    font-size: 14px
+}
+
+.button-radius {
+    border-radius: 20px
+}
+
+.button-border {
+    border: solid 1px black
+}
+
+.hidden {
+    display: none;
+}
+
+.alert {
+    border: solid 1px red
+}
+
+.button-hidden {
+    background: none;
+    border: none
+}
+
+.border-round-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

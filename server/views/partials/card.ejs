@@ -1,0 +1,9 @@
+<div id="<%= id %> " class="bg-dark p-2 radius">
+    <a href="/auth/song/<%= id %>">
+        <img class="radius w-100" src="<%= picture %>" alt="Song - <%= name %> Cover" />
+    </a>
+    <div class="mt-2">
+        <p class="bold text-white mb-0"><%= name %></p>
+        <p class="text-muted mb-0"><%= artists[0]["name"] %></p>
+    </div>
+</div>

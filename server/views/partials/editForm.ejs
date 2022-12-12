@@ -1,0 +1,27 @@
+<section class="grid-item-main bg-secondary bg-gradient px-3 py-3" id="<%= user[0]["_id"] %>" >
+    <h3 class="text-white mb-3">Edit Your Profile</h3>
+    <p class="text-center text-danger hidden" id="alert-message"></p>
+    <form id="edit-form" class="mb-5">
+        <div class="form-outline mb-4">
+            <label class="form-label bold font-small" for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" required onkeyup="validateName()" value="<%= user[0]["name"] %>" />
+            <p id="name-validate-message" class="hidden text-danger">Enter First and Last name for your profile</p>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label bold font-small" for="bio">Biography</label>
+            <input type="text" id="bio" name="bio" class="form-control" required onkeyup="" value="<%= user[0]["bio"] %>" />
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label bold font-small" for="profilePicture">Profile Picture</label>
+            <input type="text" id="profilePicture" name="profilePicture" class="form-control" required onkeyup="" value="<%= user[0]["profilePicture"] %>" />
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label bold font-small" for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" required onkeyup="validateEmail()" value="<%= user[0]["email"] %>" />
+            <p id="email-validate-message" class="hidden text-danger">This email is invalid. Make sure it's written like example@email.com</p>
+        </div>
+        <input type="submit" class="button-radius w-100 btn btn-success btn-block mb-4" value="Submit"/>
+    </form>
+
+    <%- include("company.ejs") %>
+</section>

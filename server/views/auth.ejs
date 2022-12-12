@@ -1,0 +1,9 @@
+<%- include("partials/head.ejs"); %>
+<div class="grid grid-template">
+    <%- include("partials/sidebar.ejs"); %>
+    <%- include("partials/navUser.ejs"); %>
+    <%- include("partials/main.ejs", { allSongs }); %>
+    <% console.log("Auth user= ", user) %>
+</div>
+<script src="/public/scripts/home.js"></script>
+<%- include("partials/footer.ejs"); %>

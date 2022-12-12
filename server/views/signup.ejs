@@ -1,0 +1,59 @@
+<%- include("partials/head.ejs"); %>
+<div class="d-flex flex-column align-items-center">
+    <div class="my-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+        </svg>
+        <a href="/home" class="px-1 navbar-brand text-black fs-4">Spotify Lite</a> 
+    </div>
+    <div class="w-50">
+        <div class="d-flex flex-column align-items-center">
+            <p class="bold fs-2 text-center vw-100">Sign up for free to start listening.</p>
+            <a class="btn btn-primary px-5 py-2 mb-2 w-100 button-radius">Sign up with Facebook</a>
+            <a class="btn btn-light px-5 py-2 mb-2 w-100 button-radius button-border">Sign up with Google</a>
+        </div>
+        <p class="my-4 bold text-center">Or sign up with your email</p>
+        <p class="text-center text-danger hidden" id="alert-message"></p>
+        <form id="signup-form">
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="email">What's your email?</label>
+                <input type="email" id="email" name="email" class="form-control" required onkeyup="validateEmail()" />
+                <p id="email-validate-message" class="hidden text-danger">This email is invalid. Make sure it's written like example@email.com</p>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="email-confirm">Confirm your email</label>
+                <input type="email" id="email-confirm" name="email-confirm" class="form-control" required onkeyup="confirmEmail()" />
+                <p id="email-message" class="hidden text-danger">The email addresses don't match</p>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="username">Enter your username</label>
+                <input type="text" id="username" name="username" class="form-control" required onkeyup="validateUsername()" />
+                <p id="username-validate-message" class="hidden text-danger">Username must have at least 4 character and contains only alphanumerical characters</p>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="password">Create a password</label>
+                <input type="password" id="password" name="password" class="form-control" required onkeyup="validatePassword()" />
+                <p id="password-validate-message" class="hidden text-danger">You need to enter a password. Password length needs to be from 6 to 16 characters.</p>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="password-confirm">Confirm your password</label>
+                <input type="password" id="password-confirm" name="password-confirm" class="form-control" required onkeyup="confirmPassword()" />
+                <p id="password-message" class="hidden text-danger">The passwords don't match</p>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label bold font-small" for="name">What should we call you?</label>
+                <input type="text" id="name" name="name" class="form-control" required onkeyup="validateName()" />
+                <p id="name-validate-message" class="hidden text-danger">Enter First and Last name for your profile</p>
+            </div>
+            <p class="font-small text-center">By clicking on sign-up, you agree to Spotify's Terms and Conditions of User.</p>
+            <p class="font-small text-center">To learn more about how Spotify collects, uses, shares and protects your personal data, please see Spotify's Privacy Policy.</p>
+            <input type="submit" class="button-radius w-100 btn btn-success btn-block mb-4 px-5" value="Sign up"/>
+        </form>
+        <div class="my-4 d-flex justify-content-center">
+            <p class="bold text-center d-inline mx-2">Have an account?</p>
+            <a href="/login">Log in.</a>
+        </div>
+    </div>    
+</div>
+<script src="/public/scripts/signup.js"></script>
+<%- include("partials/footer.ejs"); %>
